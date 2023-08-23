@@ -1,0 +1,30 @@
+#include <QApplication>
+#include <QListWidget>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QWidget>
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+
+    QWidget window;
+    QVBoxLayout layout(&window);
+
+    QLabel *onlineCountLabel = new QLabel("当前在线人数: 5"); // 示例数据
+    QListWidget *usersList = new QListWidget();
+
+    // 示例数据
+    usersList->addItem("用户1 (在线)");
+    usersList->addItem("用户2 (离线)");
+    usersList->addItem("用户3 (在线)");
+    usersList->addItem("用户4 (在线)");
+    usersList->addItem("用户5 (离线)");
+
+    layout.addWidget(onlineCountLabel);
+    layout.addWidget(usersList);
+    
+    window.show();
+
+    return app.exec();
+}
