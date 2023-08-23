@@ -1,0 +1,22 @@
+#include <QApplication>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QWidget>
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+
+    QWidget window;
+    QVBoxLayout layout(&window);
+
+    QLabel *chatDurationLabel = new QLabel("聊天时长: 2小时 15分钟"); // 示例数据
+    QLabel *intimacyLabel = new QLabel("亲密度: 85%"); // 示例数据
+
+    layout.addWidget(chatDurationLabel);
+    layout.addWidget(intimacyLabel);
+    
+    window.show();
+
+    return app.exec();
+}
